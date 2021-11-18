@@ -29,7 +29,7 @@ const App = () => {
     const getNews = async () => {
       var url = 'https://gnews.io/api/v4/search?q='+query+'&token=3b413a09fc52ddca455df7efcf30823a'
       const newsFromServer = await fetchNews(url)
-      setNewsList(newsFromServer)
+      newsList.length > 0 ? setNewsList(newsFromServer) : setNewsList([])
     }
     getNews()
   }
